@@ -1,6 +1,8 @@
-1) Починить колонку 'Состояние' в США 'Регулярный чекан 1c 5c 10c 25c 50c 1$ 1900-н.в..xlsx'
+1) Выпилить колонку 'Состояние' отовсюду
+	(Переформатировал Германию)
 2) Добавить Англию
 3) Форматировать Испанию. Разделить Юбилейные и погодовку. (хотя в их случае это одно и то же, лол, бля)
 4) Форматировать советские юбилейные 
 5) Форматировать Евро. (В процессе)
 6) Прописать тиражи юбилейным американским монетам (Отсюда: https://www.usmint.gov/about/production-sales-figures/circulating-coins-production?program=Circulating+Coins&+50StateQuartersyears=&+WestwardJourneyNickelSeries%E2%84%A2years=&+PresidentialOneDollaryears=&+DistrictofColumbiaandUSTerritoriesQuartersyears=&+AmericatheBeautifulQuarters%C2%AEyears=&+CirculatingCoinsyears=1022)
+7) Переименовать все exel таблицы - английский, без пробелов
