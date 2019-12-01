@@ -1,11 +1,16 @@
-﻿1) GIT Выпилить колонку 'Состояние' отовсюду
-	(Переформатировал Германию)
-2) GIT Добавить Англию
-3) GIT Форматировать Испанию. Разделить Юбилейные и погодовку. (хотя в их случае это одно и то же, лол, бля)
-4) GIT Форматировать советские юбилейные 
-5) GIT Форматировать Евро. (В процессе)
-6) GIT Прописать тиражи юбилейным американским монетам (Отсюда: https://www.usmint.gov/about/production-sales-figures/circulating-coins-production?program=Circulating+Coins&+50StateQuartersyears=&+WestwardJourneyNickelSeries%E2%84%A2years=&+PresidentialOneDollaryears=&+DistrictofColumbiaandUSTerritoriesQuartersyears=&+AmericatheBeautifulQuarters%C2%AEyears=&+CirculatingCoinsyears=1022)
-7) GIT Переименовать все exel таблицы - английский, без пробелов
-8) GIT Поправить примечания в погодовке Испании
-9) КРАСНОДАР Уточнить, действительно ли монеты Евро 2002 Греции сделаны именно монетным двором Греции?  https://www.euro-coins.info/info/mark/greece.html
-   (для повторок это верно - монетный двор Греции)
+﻿GIT Выпилить колонку 'Состояние' отовсюду
+GIT Форматировать советские юбилейные 
+GIT Форматировать Евро. (В процессе)
+GIT Прописать тиражи юбилейным американским монетам (Отсюда: https://www.usmint.gov/about/production-sales-figures/circulating-coins-production?program=Circulating+Coins&+50StateQuartersyears=&+WestwardJourneyNickelSeries%E2%84%A2years=&+PresidentialOneDollaryears=&+DistrictofColumbiaandUSTerritoriesQuartersyears=&+AmericatheBeautifulQuarters%C2%AEyears=&+CirculatingCoinsyears=1022)
+GIT Переименовать все exel таблицы - английский, без пробелов
+GIT Прописать тиражи Германии
+GIT Поменять местами колнки тиража и серии в Евро Юбилейках
+
+КРАСНОДАР Уточнить, какими монетными дворами отчеканены Евро 2002 Греции.  https://www.euro-coins.info/info/mark/greece.html (Повторки приезжают с Income из Москвы)
+КРАСНОДАР Переиндексировать все монеты Испании (1936-2001)
+	ТАКЖЕ Уточнить, какой разновидности 5 Pts Испании 1989г.('Crowned Arms - No star' or '5 Anagram'?)   (http://www.coindatabase.com/coin_detail_pesetas.php?cdb=Z200204 или http://www.coindatabase.com/coin_detail_pesetas.php?cdb=1Z200001)
+	ТАКЖЕ уточнить, какой разновидности 25 Pts Испании 1992г ('Expo'92 Sevilla - Torre del Oro' or 'Expo'92 Sevilla - La Giralda')
+КРАСНОДАР Индексировать Канаду
+
+МОСКВА Уточнить, повторки ли эти 1коп СССР, (лежат в дублях СССР)
+МОСКВА Индексировать Англию
