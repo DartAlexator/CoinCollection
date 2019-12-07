@@ -1,10 +1,9 @@
-﻿GIT Выпилить колонку 'Состояние' отовсюду
-GIT Форматировать советские юбилейные 
-GIT Прописать тиражи юбилейным американским монетам (Отсюда: https://www.usmint.gov/about/production-sales-figures/circulating-coins-production?program=Circulating+Coins&+50StateQuartersyears=&+WestwardJourneyNickelSeries%E2%84%A2years=&+PresidentialOneDollaryears=&+DistrictofColumbiaandUSTerritoriesQuartersyears=&+AmericatheBeautifulQuarters%C2%AEyears=&+CirculatingCoinsyears=1022)
+﻿GIT Форматировать все таблицы по единому шаблону
 GIT Переименовать все exel таблицы - английский, без пробелов (present, circulation_quality)
 GIT Заменить все русские слова на английские во всех коллекциях
 GIT Поменять местами колнки тиража и серии в Евро Юбилейках и евро регулярках
 GIT Разделить колонку серия на 2 колонки: серия и тип для всех монет
+GIT Внести разновидности юбилейных США в Commemorative (use https://www.usacoinbook.com/)
 
 КРАСНОДАР Уточнить, какими монетными дворами отчеканены Евро 2002 Греции.  https://www.euro-coins.info/info/mark/greece.html (Повторки приезжают с Income из Москвы)
 КРАСНОДАР Переиндексировать все монеты Испании (1936-2001)
@@ -20,4 +19,4 @@ GIT Разделить колонку серия на 2 колонки: сери
 
 PROJECT_1 Сделать пуш в csv формате
 PROJECT_2 Выгружать данные по ексельке - какие нужно монеты (exel->csv->sql->txt)
-
+PROJECT_3 Придумать и реализовать систему индексирования расположения коллецкции с точностью до альбома (или страницы альбома) (город-шкаф-полка-альбом(тип альбома)-[страницы альбома])
