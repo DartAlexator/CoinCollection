@@ -49,7 +49,6 @@ GIT Добавить для всех монет id каталога Краузе
 МОСКВА Индексировать Англию
 МОСКВА Индексировать Германию 1900-1945 
 МОСКВА Уточнить монетный двор 50 коп 1992 Украины (Монетный двор Италии OR Луганска OR Англии) (https://www.russian-money.ru/blizhnee-zarubezhje/ukraina/2/50-kopeek-1992-goda--107)
-МОСКВА Уточнить разновилность Памятные 2 евро Испании 2009 ('Obv: Normal stars' OR 'Obv: Large stars') (http://www.eurocollection.co.uk/Variants.html)
 
 
 PROJECT_1 Сделать пуш в csv формате
