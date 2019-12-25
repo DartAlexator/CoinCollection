@@ -24,11 +24,13 @@ GIT Добавить для всех монет id каталога Краузе
 	1 руб 1967 50th Anniversary of Revolution   ( Lettering on edge '1917-1967 ⋆ СЛАВА ВЕЛИКОМУ ОКТЯБРЮ ⋆' OR Lettering on edge '1917-1988 . Н ⋆ СЛАВА ВЕЛИКОМУ ОКТЯБРЮ ⋆')
 	1 руб 1970 30th Anniversary of World War II ( Lettering on edge 'ОДИН РУБЛЬ ⋆ 9 МАЯ 1975 ⋆' OR Lettering on edge '1988 . Н')
 КРАСНОДАР Уточнить разновидность ЕВРО (http://www.eurocollection.co.uk/Variants.html):
-		20 центов Германии F (Rev: new map of Europe OR Rev: old map of Europe)	
-		2 евро Бельгии 2008 ('Rev: Rough map' OR 'Rev: Smooth map')
+		20 центов Германии F 2007 (Rev: new map of Europe OR Rev: old map of Europe)	
+		2  евро   Бельгии 2008 ('Rev: Rough map' OR 'Rev: Smooth map')
 		10 центов 2002 Германии ('Obv: Opaque upper section' OR NOT (look http://www.eurocollection.co.uk/Variants.html))
-		1 евро 2002 Германии ('Turning stars' OR NOT (look http://www.eurocollection.co.uk/Variants.html))
+		1  евро 2002 Германии ('Turning stars' OR NOT (look http://www.eurocollection.co.uk/Variants.html))
 		Памятные 2 евро Испании 2009 ('Obv: Normal stars' OR 'Obv: Large stars')
+		10 центов Италии 2002('Obv: Smaller artist signature ' OR 'Obv: Double border' OR NOT)
+		1  евро   Италии 2002('Missing artist signature' OR NOT)
 
 КРАСНОДАР Индексировать Канаду (http://www.saskatooncoinclub.ca/articles/02_coin_mintages.html)
 КРАСНОДАР Привести в Москву повторки РФ (и 1991-1992 и 1998-up) и
@@ -49,6 +51,7 @@ GIT Добавить для всех монет id каталога Краузе
 МОСКВА Индексировать Англию
 МОСКВА Индексировать Германию 1900-1945 
 МОСКВА Уточнить монетный двор 50 коп 1992 Украины (Монетный двор Италии OR Луганска OR Англии) (https://www.russian-money.ru/blizhnee-zarubezhje/ukraina/2/50-kopeek-1992-goda--107)
+МОСКВА Уточнить разновидность 1  евро   Италии 2002('Missing artist signature' OR NOT)(http://www.eurocollection.co.uk/Variants.html)
 
 
 PROJECT_1 Сделать пуш в csv формате
