@@ -50,13 +50,7 @@ GIT Добавить для всех монет id каталога Краузе
 
 МОСКВА Индексировать Англию
 МОСКВА Индексировать Германию 1900-1945 
-МОСКВА Уточнить монетный двор 50 коп 1992 Украины (Монетный двор Италии OR Луганска OR Англии) (https://www.russian-money.ru/blizhnee-zarubezhje/ukraina/2/50-kopeek-1992-goda--107)
-МОСКВА Уточнить разновидность 2  евро   Люксембурга 2002 ('Obv: Large stars' OR 'Obv: Dutch edge' OR NOT) (look http://www.eurocollection.co.uk/Variants.html)
-МОСКВА Уточнить разновидность 2  Памятных евро Люксембурга (см таблицы):
-	2017 200th Anniversary - Birth of Grand Duke William III
-	2018 175th Anniversary - Death of Grand Duke William I
-	2019 100th Аnniversary - Accession of Grand Duchess Charlotte to the Throne
-	2019 100th Аnniversary - Universal Suffrage in Luxembourg
+
 
 PROJECT_1 Сделать пуш в csv формате
 PROJECT_2 Выгружать данные по ексельке - какие нужно монеты (exel->csv->sql->txt)
