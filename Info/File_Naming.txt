@@ -2,7 +2,7 @@
 Tags:
 1)           Collection  (#EURO, #RUSSIA) 
 2) Optional: Country     (#USSR, #GDR)
-3) Type of coins	 (#Commemorative, #Regular)
+3) Type of coins	 (#Commemorative, #Regular, #Proof_sets)
 4) Years of coins        (#[2002-present])
 5) Type of quality 	 (#circulation_quality, #proof_quality)
 
