@@ -3,3 +3,4 @@
 3) Green  colour = BU coin without coincard
 4) Blue   colour = BU coin in coincard
 5) Orange colour = Proof in coincard
+6) Yellow colour = UNC in coincard
