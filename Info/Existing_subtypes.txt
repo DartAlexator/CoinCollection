@@ -21,3 +21,7 @@
 #Ruling_authority
 #Legend
 #State
+#Diameter
+#Mint_specifications
+#Shape
+#Weight
