@@ -1,6 +1,0 @@
-1) Black  colour = good quality (UNC for UNC collection; UNC and XF for XF collection)
-2) Red    colour = bad quality (Worse than UNC for UNC collection; Worse than XF for XF collection)
-3) Green  colour = BU coin without coincard
-4) Blue   colour = BU coin in coincard
-5) Orange colour = Proof in coincard
-6) Yellow colour = UNC in coincard
