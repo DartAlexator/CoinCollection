@@ -3,193 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Монетная библиотека</title>
+    <title>Dart_Alexator Coin Collection</title>
     <style>
         body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
-        h1 { text-align: center; color: #1c1e21; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { text-align: center; color: #1c1e21; font-size: 20px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #65676b; font-size: 12px; margin-bottom: 20px; text-transform: uppercase; }
         
-        /* Поле поиска */
         #searchBar {
-            width: 100%;
-            max-width: 360px;
-            padding: 12px 15px;
-            margin: 20px 0;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            font-size: 16px;
-            outline: none;
-            box-sizing: border-box;
+            width: 100%; max-width: 360px; padding: 12px 15px; margin-bottom: 20px;
+            border: 2px solid #ddd; border-radius: 12px; font-size: 16px; outline: none; box-sizing: border-box;
         }
         #searchBar:focus { border-color: #007bff; }
 
         .grid { display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%; max-width: 400px; }
         
-        /* Стили карточки */
         .card { 
             display: flex; align-items: center; padding: 15px; 
             background: white; color: #1c1e21; text-decoration: none; 
             border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e0e0e0; transition: 0.1s;
         }
+        .card:active { transform: scale(0.98); background: #fafafa; }
         .icon { font-size: 24px; margin-right: 15px; }
         .info { display: flex; flex-direction: column; }
-        .title { font-weight: bold; font-size: 16px; }
-        .code { font-size: 13px; color: #007bff; margin-top: 2px; font-family: monospace; }
+        .title { font-weight: bold; font-size: 15px; line-height: 1.2; }
+        .code { font-size: 13px; color: #007bff; margin-top: 4px; font-family: monospace; }
         
-        /* Скрытие при поиске */
         .hidden { display: none; }
+        #loader { color: #888; font-size: 14px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <h1>Dart_Alexator<br>CoinCollection</h1>
+    <h1>Dart_Alexator</h1>
+    <div class="subtitle">Coin Collection Library</div>
 
-    <!-- Поле поиска -->
-    <input type="text" id="searchBar" placeholder="Введите поисковый запрос..." onkeyup="filterAlbums()">
+    <input type="text" id="searchBar" placeholder="Поиск по названию или ID..." onkeyup="filterAlbums()">
 
-    <div class="grid" id="albumGrid">
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A000-00-00-00.html" class="card" data-name="0">
-            <div class="icon">📔</div>
-            <div class="info">
-                <span class="title">Виртуальный альбом</span>
-                <span class="code">A000-00-00-00</span>
-            </div>
-        </a>
-
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-01-GD-BK.html" class="card" data-name="1">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 1)</span>
-                <span class="code">A001-01-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-02-GD-BK.html" class="card" data-name="2">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 2)</span>
-                <span class="code">A001-02-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-03-GD-BK.html" class="card" data-name="3">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 3)</span>
-                <span class="code">A001-03-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-04-GD-BK.html" class="card" data-name="4">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 4)</span>
-                <span class="code">A001-04-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-05-GD-BK.html" class="card" data-name="5">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 5)</span>
-                <span class="code">A001-05-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A001-06-GD-BK.html" class="card" data-name="6">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные 2 евро (часть 6)</span>
-                <span class="code">A001-06-GD-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A002-01-OA-BK.html" class="card" data-name="7">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Юбилейные монеты США (Дворы P и S)</span>
-                <span class="code">A002-01-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A002-02-OA-BK.html" class="card" data-name="8">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Юбилейные монеты США (Двор D))</span>
-                <span class="code">A002-02-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A003-01-OA-DB.html" class="card" data-name="9">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные монеты РФ (часть 1)</span>
-                <span class="code">A003-01-OA-DB</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A003-02-OA-DB.html" class="card" data-name="10">
-            <div class="icon">📘</div>
-            <div class="info">
-                <span class="title">Юбилейные монеты РФ (часть 2)</span>
-                <span class="code">A003-02-OA-DB</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A004-01-OA-BK.html" class="card" data-name="11">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Регулярные монеты евро (часть 1)</span>
-                <span class="code">A004-01-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A004-02-OA-BK.html" class="card" data-name="12">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Регулярные монеты евро (часть 2)</span>
-                <span class="code">A004-02-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A005-01-OA-BK.html" class="card" data-name="13">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Регулярные монеты США (Дворы P и S)</span>
-                <span class="code">A005-01-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A005-02-OA-BK.html" class="card" data-name="14">
-            <div class="icon">📓</div>
-            <div class="info">
-                <span class="title">Регулярные монеты США (Двор D)</span>
-                <span class="code">A005-02-OA-BK</span>
-            </div>
-        </a>
-        
-        <a href="https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/A006-01-OA-BU.html" class="card" data-name="15">
-            <div class="icon">📕</div>
-            <div class="info">
-                <span class="title">Регулярные монеты РФ </span>
-                <span class="code">A006-01-OA-BU</span>
-            </div>
-        </a>
-
-    </div>
+    <div id="loader">Загрузка данных из CSV...</div>
+    <div class="grid" id="albumGrid"></div>
 
     <script>
+        const csvUrl = 'Info/albums_ID.csv';
+        //const pathArray = window.location.pathname.split('/');
+        //const repoName = pathArray[1]; // Это будет 'CoinCollection'
+        //const csvUrl = `/${repoName}/Info/albums_ID.csv`;
+        
+        const iconMap = {
+            'BK': '📓', // Black
+            'BU': '📕', // Burgundy
+            'DB': '📘', // Dark Blue
+            'GR': '📗', // Green
+            'BN': '📙', // Brown
+            'DN': '📔', // Dark Brown
+            'LN': '📒', // Light Brown
+            'LB': '📘', // Light Blue
+            'GY': '📓'  // Grey
+        };
+
+        async function init() {
+            try {
+                const resp = await fetch(csvUrl + '?t=' + Date.now());                
+                const buffer = await resp.arrayBuffer();
+
+                // Декодируем из DOS-кодировки (ibm866)
+                const decoder = new TextDecoder('ibm866'); 
+                const text = decoder.decode(buffer);
+                
+                const rows = text.split('\n').filter(row => row.trim() !== '');
+                
+                const grid = document.getElementById('albumGrid');
+                const loader = document.getElementById('loader');
+                if(loader) loader.remove();
+
+                // Начинаем с i=1, чтобы пропустить заголовок таблицы
+                for (let i = 1; i < rows.length; i++) {
+                    const cols = rows[i].split(';');
+                    if (cols.length < 4) continue;
+
+                    const idCode = cols[1].trim();   // Album ID
+                    const titleRu = cols[3].trim();  // Album Content (ru)
+                    const link = cols[4] ? cols[4].trim() : ""; // Album hardcoded link
+                    
+                    // Берем последние 2 буквы ID для определения цвета
+                    const colorSuffix = idCode.split('-').pop();
+                    const icon = iconMap[colorSuffix] || '📘';
+
+                    const card = document.createElement('a');
+                    card.className = 'card';
+                    card.href = link || '#';
+                    if (!link || link === "") card.style.opacity = '0.5';
+
+                    card.innerHTML = `
+                        <div class="icon">${icon}</div>
+                        <div class="info">
+                            <span class="title">${titleRu}</span>
+                            <span class="code">${idCode}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+            } catch (err) {
+                document.getElementById('loader').innerText = "Ошибка доступа к CSV файлу.";
+                console.error(err);
+            }
+        }
+
         function filterAlbums() {
             let input = document.getElementById('searchBar').value.toLowerCase();
             let cards = document.getElementsByClassName('card');
             for (let card of cards) {
-                // Скрипт просто берет весь видимый текст внутри карточки
                 let text = card.textContent.toLowerCase();
                 card.classList.toggle('hidden', !text.includes(input));
             }
         }
-    </script>
 
+        init();
+    </script>
 </body>
 </html>
