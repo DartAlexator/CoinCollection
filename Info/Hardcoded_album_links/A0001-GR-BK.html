@@ -6,7 +6,7 @@
     <title>Coin collection</title>
     <style>
         body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 25px; margin: 0; }
-        h2 { color: #1c1e21; margin-bottom: 20px; font-size: 22px; }
+        h2 { color: #1c1e21; margin-bottom: 10px; font-size: 22px; text-align: center; width: 100%;}
         .btn { 
             display: block; width: 100%; max-width: 280px; padding: 16px; margin: 8px 0;
             background-color: #ffffff; color: #1c1e21; text-align: center; 
@@ -15,24 +15,32 @@
         }
         .btn:active { background-color: #e4e6eb; }
         .footer { margin-top: auto; padding-top: 40px; font-size: 11px; color: #8a8d91; }
+        h1 {
+            text-align: center; /* Центрирует текст */
+            width: 100%;        /* Растягивает заголовок на всю ширину */
+            color: #1c1e21;       /* Тот же стильный темный цвет */
+            font-size: 26px;      /* Чуть крупнее, чем h2 */
+            margin-bottom: 5px;  /* Отступ до следующего элемента */
+            line-height: 1.2;     /* Расстояние между строками после <br> */
+        }
     </style>
 </head>
 <body>
-    <h1>Альбом A0001-GR-BL</h1>
-    <h2><span class="emoji">🇪🇺</span> Юбилейные 2 евро (часть 1)</h2>
+    <h1>Альбом<br><small>A0001-GR-BK</small></h1>
+    <h2><span class="emoji">🇪🇺</span> Юбилейные 2 евро<br><small>(часть 1)</small></h2>
 
     <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Austria/%23EURO%23Austria%23Commemorative%23%5B2005-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇦🇹</span> <span>Австрия</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Belgium/%23EURO%23Belgium%23Commemorative%23%5B2005-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇧🇪</span> <span>Бельгия</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Cyprus/%23EURO%23Cyprus%23Commemorative%23%5B2009-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇨🇾</span> <span>Кипр</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Estonia/%23EURO%23Estonia%23Commemorative%23%5B2012-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇪🇪</span> <span>Эстония</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/France/%23EURO%23France%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇫🇷</span> <span>Франция</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Italy/%23EURO%23Italy%23Commemorative%23%5B2004-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇮🇹</span> <span>Италия</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Latvia/%23EURO%23Latvia%23Commemorative%23%5B2014-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇱🇻</span> <span>Латвия</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Ireland/%23EURO%23Ireland%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇮🇪</span> <span>Ирландия</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Lithuania/%23EURO%23Lithuania%23Commemorative%23%5B2015-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇱🇹</span> <span>Литва</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Netherlands/%23EURO%23Netherlands%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇳🇱</span> <span>Нидерланды</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Portugal/%23EURO%23Portugal%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇵🇹</span> <span>Португалия</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Austria/%23EURO%23Austria%23Commemorative%23%5B2005-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇦🇹</span> <span>Австрия / Austria</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Belgium/%23EURO%23Belgium%23Commemorative%23%5B2005-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇧🇪</span> <span>Бельгия / Belgium</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Cyprus/%23EURO%23Cyprus%23Commemorative%23%5B2009-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇨🇾</span> <span>Кипр / Cyprus</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Estonia/%23EURO%23Estonia%23Commemorative%23%5B2012-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇪🇪</span> <span>Эстония / Estonia</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/France/%23EURO%23France%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇫🇷</span> <span>Франция / France</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Italy/%23EURO%23Italy%23Commemorative%23%5B2004-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇮🇹</span> <span>Италия / Italy</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Latvia/%23EURO%23Latvia%23Commemorative%23%5B2014-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇱🇻</span> <span>Латвия / Latvia</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Ireland/%23EURO%23Ireland%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇮🇪</span> <span>Ирландия / Ireland</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Lithuania/%23EURO%23Lithuania%23Commemorative%23%5B2015-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇱🇹</span> <span>Литва / Lithuania</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Netherlands/%23EURO%23Netherlands%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇳🇱</span> <span>Нидерланды / Netherlands</span></a>
+    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Portugal/%23EURO%23Portugal%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn"> <span class="emoji">🇵🇹</span> <span>Португалия / Portugal</span></a>
     
     <div class="footer">Все права защищены ©</div>
 </body>
