@@ -44,7 +44,10 @@
     <div class="grid" id="albumGrid"></div>
 
     <script>
-        const csvUrl = 'https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/albums_ID.csv';
+        //const csvUrl = '/CoinCollection/Info/albums_ID.csv';
+        const pathArray = window.location.pathname.split('/');
+        const repoName = pathArray[1]; // Это будет 'CoinCollection'
+        const csvUrl = `/${repoName}/Info/EURO/Germany/albums_ID.csv`;
         
         const iconMap = {
             'BK': '📓', // Black
@@ -61,6 +64,7 @@
         async function init() {
             try {
                 const resp = await fetch(csvUrl + '?t=' + Date.now());
+                
                 const text = await resp.text();
                 const rows = text.split('\n').filter(row => row.trim() !== '');
                 
