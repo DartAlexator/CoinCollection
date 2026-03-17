@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dart_Alexator Coin Collection</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
+        h1 { text-align: center; color: #1c1e21; font-size: 20px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #65676b; font-size: 12px; margin-bottom: 20px; text-transform: uppercase; }
+        
+        #searchBar {
+            width: 100%; max-width: 360px; padding: 12px 15px; margin-bottom: 20px;
+            border: 2px solid #ddd; border-radius: 12px; font-size: 16px; outline: none; box-sizing: border-box;
+        }
+        #searchBar:focus { border-color: #007bff; }
+
+        .grid { display: grid; grid-template-columns: 1fr; gap: 12px; width: 100%; max-width: 400px; }
+        
+        .card { 
+            display: flex; align-items: center; padding: 15px; 
+            background: white; color: #1c1e21; text-decoration: none; 
+            border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0; transition: 0.1s;
+        }
+        .card:active { transform: scale(0.98); background: #fafafa; }
+        .icon { font-size: 24px; margin-right: 15px; }
+        .info { display: flex; flex-direction: column; }
+        .title { font-weight: bold; font-size: 15px; line-height: 1.2; }
+        .code { font-size: 13px; color: #007bff; margin-top: 4px; font-family: monospace; }
+        
+        .hidden { display: none; }
+        #loader { color: #888; font-size: 14px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <h1>Dart_Alexator</h1>
+    <div class="subtitle">Coin Collection Library</div>
+
+    <input type="text" id="searchBar" placeholder="Поиск по названию или ID..." onkeyup="filterAlbums()">
+
+    <div id="loader">Загрузка данных из CSV...</div>
+    <div class="grid" id="albumGrid"></div>
+
+    <script>
+        const csvUrl = 'https://dartalexator.github.io/CoinCollection/Info/Hardcoded_album_links/albums_ID.csv';
+        
+        const iconMap = {
+            'BK': '📓', // Black
+            'BU': '📕', // Burgundy
+            'DB': '📘', // Dark Blue
+            'GR': '📗', // Green
+            'BN': '📙', // Brown
+            'DN': '📔', // Dark Brown
+            'LN': '📒', // Light Brown
+            'LB': '📘', // Light Blue
+            'GY': '📓'  // Grey
+        };
+
+        async function init() {
+            try {
+                const resp = await fetch(csvUrl + '?t=' + Date.now());
+                const text = await resp.text();
+                const rows = text.split('\n').filter(row => row.trim() !== '');
+                
+                const grid = document.getElementById('albumGrid');
+                const loader = document.getElementById('loader');
+                if(loader) loader.remove();
+
+                // Начинаем с i=1, чтобы пропустить заголовок таблицы
+                for (let i = 1; i < rows.length; i++) {
+                    const cols = rows[i].split(';');
+                    if (cols.length < 4) continue;
+
+                    const idCode = cols[1].trim();   // Album ID
+                    const titleRu = cols[3].trim();  // Album Content (ru)
+                    const link = cols[4] ? cols[4].trim() : ""; // Album hardcoded link
+                    
+                    // Берем последние 2 буквы ID для определения цвета
+                    const colorSuffix = idCode.split('-').pop();
+                    const icon = iconMap[colorSuffix] || '📘';
+
+                    const card = document.createElement('a');
+                    card.className = 'card';
+                    card.href = link || '#';
+                    if (!link || link === "") card.style.opacity = '0.5';
+
+                    card.innerHTML = `
+                        <div class="icon">${icon}</div>
+                        <div class="info">
+                            <span class="title">${titleRu}</span>
+                            <span class="code">${idCode}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+            } catch (err) {
+                document.getElementById('loader').innerText = "Ошибка доступа к CSV файлу.";
+                console.error(err);
+            }
+        }
+
+        function filterAlbums() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            for (let card of cards) {
+                let text = card.textContent.toLowerCase();
+                card.classList.toggle('hidden', !text.includes(input));
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
