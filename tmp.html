@@ -63,13 +63,13 @@
 
         async function init() {
             try {
-                const resp = await fetch(csvUrl + '?t=' + Date.now());
-                
-                //const text = await resp.text();
+                const resp = await fetch(csvUrl + '?t=' + Date.now());                
                 const buffer = await resp.arrayBuffer();
-                // Декодируем их в UTF-8 (если не поможет, замените 'utf-8' на 'windows-1251')
-                const decoder = new TextDecoder('windows-1251'); 
+
+                // Декодируем из DOS-кодировки (ibm866)
+                const decoder = new TextDecoder('ibm866'); 
                 const text = decoder.decode(buffer);
+                
                 const rows = text.split('\n').filter(row => row.trim() !== '');
                 
                 const grid = document.getElementById('albumGrid');
