@@ -5,24 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
     <style>
-        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 25px; margin: 0; }
-        h2 { color: #1c1e21; margin-bottom: 10px; font-size: 22px; text-align: center; width: 100%;}
+        body { 
+            font-family: -apple-system, sans-serif; 
+            background: #f0f2f5; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 25px 25px 0 25px; /* Убираем нижний отступ, чтобы не создавал лишнюю высоту */
+            margin: 0; 
+            overflow-x: hidden; /* Защита от горизонтального сдвига */
+            min-height: 100%;   /* Не даем растягиваться больше чем нужно */
+        }
+        
+        h1 { text-align: center; width: 100%; color: #1c1e21; font-size: 24px; margin-bottom: 5px; line-height: 1.2; }
+        h1 small { font-size: 18px; color: #007bff; font-family: monospace; }
+        
+        h2 { color: #1c1e21; margin-bottom: 20px; font-size: 20px; text-align: center; width: 100%; line-height: 1.2; }
+        h2 small { font-weight: normal; color: #65676b; }
+
+        /* Контейнер для двух кнопок в ряд */
+        .btn-row { 
+            display: flex; 
+            width: 100%; 
+            max-width: 280px; 
+            gap: 8px; 
+            margin: 4px 0; 
+            align-items: center;
+        }
+
+        /* Основная кнопка (скачивание) */
         .btn { 
-            display: block; width: 100%; max-width: 280px; padding: 16px; margin: 8px 0;
-            background-color: #ffffff; color: #1c1e21; text-align: center; 
-            text-decoration: none; border-radius: 12px; font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #ddd;
+            flex-grow: 1; /* Занимает всё свободное место */
+            padding: 14px 10px; 
+            background-color: #ffffff; 
+            color: #1c1e21; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            border: 1px solid #ddd;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        .btn:active { background-color: #e4e6eb; }
-        .footer { margin-top: auto; padding-top: 40px; font-size: 11px; color: #8a8d91; }
-        h1 {
-            text-align: center; /* Центрирует текст */
-            width: 100%;        /* Растягивает заголовок на всю ширину */
-            color: #1c1e21;       /* Тот же стильный темный цвет */
-            font-size: 26px;      /* Чуть крупнее, чем h2 */
-            margin-bottom: 5px;  /* Отступ до следующего элемента */
-            line-height: 1.2;     /* Расстояние между строками после <br> */
+
+        /* Кнопка-папка (переход в GitHub) */
+        .btn-folder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
+
+        .btn:active, .btn-folder:active { background-color: #e4e6eb; }
+
+        /* Кнопка возврата в библиотеку */
+        .btn-back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 252px;
+            padding: 14px;
+            margin-top: 35px;
+            background-color: #24292e; 
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        .btn-back:active {
+            background-color: #000000;
+            transform: translateY(2px);
+        }
+
+        .btn-back .emoji {
+            margin-right: 10px;
+        }
+
+        .footer { 
+            margin-top: 20px; 
+            padding-bottom: 30px; 
+            font-size: 11px; 
+            color: #8a8d91; 
+            text-align: center;
+        }
+        .emoji { margin-right: 5px; }
     </style>
 </head>
 <body>
@@ -30,13 +111,52 @@
     <h2><span class="emoji">🇪🇺</span> Регулярные монеты евро<br><small>(часть 1)</small></h2>
 
     <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Monaco/%23EURO%23Monaco%23Regular%23%5B2001-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇲🇨</span> <span>Монако / Monaco</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Netherlands/%23EURO%23Netherlands%23Regular%23%5B1999-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇳🇱</span> <span>Нидерланды / Netherlands</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Portugal/%23EURO%23Portugal%23Regular%23%5B2002-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇵🇹</span> <span>Португалия / Portugal</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/San_Marino/%23EURO%23San_Marino%23Regular%23%5B2002-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇸🇲</span> <span>Сан-Марино / San Marino</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Slovakia/%23EURO%23Slovakia%23Regular%23%5B2009-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇸🇰</span> <span>Словакия / Slovakia</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Spain/%23EURO%23Spain%23Regular%23%5B1999-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇪🇸</span> <span>Испания / Spain</span></a>
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Monaco/%23EURO%23Monaco%23Regular%23%5B2001-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇲🇨</span> <span>Монако / Monaco</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Monaco/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
     
-    <div class="footer">Все права защищены ©</div>
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Netherlands/%23EURO%23Netherlands%23Regular%23%5B1999-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇳🇱</span> <span>Нидерланды / Netherlands</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Netherlands/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Portugal/%23EURO%23Portugal%23Regular%23%5B2002-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇵🇹</span> <span>Португалия / Portugal</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Portugal/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/San_Marino/%23EURO%23San_Marino%23Regular%23%5B2002-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇸🇲</span> <span>Сан-Марино / San Marino</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/San_Marino/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Slovakia/%23EURO%23Slovakia%23Regular%23%5B2009-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇸🇰</span> <span>Словакия / Slovakia</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Slovakia/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Spain/%23EURO%23Spain%23Regular%23%5B1999-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇪🇸</span> <span>Испания / Spain</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Spain/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
+        <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
+    </a>
+
+    <div class="footer">Dart_Alexator Coin Collection Library ©</div>
 </body>
 </html>
