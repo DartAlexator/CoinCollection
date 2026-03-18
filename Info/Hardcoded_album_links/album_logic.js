@@ -29,26 +29,39 @@ const csvUrl = 'album_buttons.csv';
                     const excelLink = cols[3] ? cols[3].trim() : "";
                     const folderLink = cols[4] ? cols[4].trim() : "";
 
-                    if (excelLink === "") return;
-
+                    // Обработка иконки (флаг или эмодзи)
                     let iconHtml = '';
-                    if (iconData && iconData !== "") {
+                    if (iconData !== "") {
                         if (iconData.startsWith('http')) {
                             iconHtml = `<img src="${iconData}" width="24" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">`;
                         } else {
-                            iconHtml = `<span class="emoji">${iconData}</span>`;
+                            iconHtml = `<span class="emoji" style="margin-right:8px;">${iconData}</span>`;
                         }
                     }
 
-                    const rowDiv = document.createElement('div');
-                    rowDiv.className = 'btn-row';
-                    rowDiv.innerHTML = `
-                        <a href="${excelLink}" class="btn">
-                            ${iconHtml}<span>${name}</span>
-                        </a>
-                        <a href="${folderLink}" class="btn-folder" title="Открыть папку">📂</a>
-                    `;
-                    container.appendChild(rowDiv);
+                    // НОВАЯ ЛОГИКА: Если обе ссылки пусты — создаем заголовок h2
+                    if (excelLink === "" && folderLink === "") {
+                        const header = document.createElement('h2');
+                        // Стили для отступов, чтобы заголовок смотрелся красиво между кнопками
+                        header.style.marginTop = "25px";
+                        header.style.marginBottom = "10px";
+                        header.innerHTML = `${iconHtml}${name}`;
+                        container.appendChild(header);
+                        return; // Прекращаем выполнение для этой строки и переходим к следующей
+                    }
+
+                    // Если ссылки есть (хотя бы одна из них, по твоей старой логике)
+                    if (excelLink !== "") {
+                        const rowDiv = document.createElement('div');
+                        rowDiv.className = 'btn-row';
+                        rowDiv.innerHTML = `
+                            <a href="${excelLink}" class="btn">
+                                ${iconHtml}<span>${name}</span>
+                            </a>
+                            <a href="${folderLink}" class="btn-folder" title="Открыть папку">📂</a>
+                        `;
+                        container.appendChild(rowDiv);
+                    }
                 }
             });
         } catch (err) {
