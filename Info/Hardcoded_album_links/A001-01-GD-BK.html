@@ -69,7 +69,9 @@
 
                         rowDiv.innerHTML = `
                             <a href="${excelLink}" class="btn">
-                                ${iconHtml}<span>${name}</span>
+                                ${iconHtml}
+                                <span>${name}</span>
+                                <div style="width:32px;"></div> <!-- Пустышка для центровки текста -->
                             </a>
                             <a href="${folderLink}" class="btn-folder" title="Открыть папку">📂</a>
                         `;
