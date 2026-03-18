@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="sticky-header">
-        <!-- Скрипт берёт ID отсюда -->
-        <h1>Альбом<br><small id="albumId">A001-01-GD-BK</small></h1>
+        <!-- Сюда скрипт сам впишет ID из названия файла -->
+        <h1>Альбом<br><small id="albumId">Загрузка...</small></h1>
         <h2><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;"> Юбилейные 2 евро<br><small>(часть 1)</small></h2>
     </div>
 
@@ -22,51 +22,51 @@
     <div class="footer">Dart_Alexator Coin Collection Library ©</div>
 
     <script>
-        // Путь к ОБЩЕМУ файлу со всеми кнопками всех альбомов
         const csvUrl = 'album_buttons.csv'; 
 
         async function loadAlbumButtons() {
             try {
-                const currentID = document.getElementById('albumId').innerText.trim();
+                // 1. Автоматически определяем ID из имени HTML-файла
+                const path = window.location.pathname;
+                const fileName = path.split('/').pop();
+                const currentID = fileName.replace('.html', '').trim();
+
+                // 2. Сразу прописываем этот ID в заголовок страницы (в тег small)
+                const albumIdElement = document.getElementById('albumId');
+                if (albumIdElement) albumIdElement.innerText = currentID;
+
+                // 3. Загружаем общий CSV файл
                 const resp = await fetch(csvUrl + '?t=' + Date.now());
                 const text = await resp.text();
                 
-                // Очистка от символов переноса Excel и разбивка на строки
                 const rows = text.replace(/\r/g, "").split('\n').filter(row => row.trim() !== '');
                 const container = document.getElementById('buttonsContainer');
+                container.innerHTML = '';
 
                 rows.forEach((row, index) => {
-                    if (index === 0) return; // Пропускаем заголовок таблицы
+                    if (index === 0) return; // Пропуск заголовка
                     const cols = row.split(';');
                     
-                    // Проверяем, относится ли эта строка к текущему альбому
-                    if (cols[0].trim() === currentID) {
-                        // Проверяем наличие колонки перед тем как делать .trim()
+                    // 4. Ищем строки, где ID в CSV совпадает с ID файла
+                    if (cols[0] && cols[0].trim() === currentID) {
                         const iconData  = cols[1] ? cols[1].trim() : "";
                         const name      = cols[2] ? cols[2].trim() : "Без названия";
                         const excelLink = cols[3] ? cols[3].trim() : "";
                         const folderLink = cols[4] ? cols[4].trim() : "";
 
-                        // Если нет ссылки на Excel — вообще не рисуем этот ряд
                         if (excelLink === "") return;
 
-                        // 1. Сначала определяем, что рисовать в блоке иконки
-                        let iconHtml = ''; // По умолчанию пусто
-
-                        if (iconData && iconData.trim() !== "") {
+                        let iconHtml = '';
+                        if (iconData && iconData !== "") {
                             if (iconData.startsWith('http')) {
-                                // Если это ссылка — рисуем картинку
                                 iconHtml = `<img src="${iconData}" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">`;
                             } else {
-                                // Если это текст/эмодзи — рисуем как эмодзи
                                 iconHtml = `<span class="emoji">${iconData}</span>`;
                             }
                         }
 
-                        // 2. Генерируем финальную верстку ряда
                         const rowDiv = document.createElement('div');
                         rowDiv.className = 'btn-row';
-
                         rowDiv.innerHTML = `
                             <a href="${excelLink}" class="btn">
                                 ${iconHtml}<span>${name}</span>
