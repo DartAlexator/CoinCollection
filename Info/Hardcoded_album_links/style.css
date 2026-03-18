@@ -26,10 +26,11 @@ h2 small { font-weight: normal; color: #65676b; }
 }
 
 .btn { 
-    flex: 1; /* Занимает всё доступное место в ряду */
-    min-width: 0; /* Важно для обрезания/переноса текста */
-    height: 48px; /* Фиксированная высота для всех кнопок */
-    padding: 0 8px; 
+    flex-grow: 1; 
+    min-width: 0;      /* Важно: не дает кнопке раздуваться от длинного текста */
+    height: 46px;      /* Делаем высоту кнопок такой же, как у btn-folder (46px) */
+    padding: 0 45px;   /* Отступы по бокам, чтобы текст не наезжал на иконку */
+    
     background-color: #ffffff; 
     color: #1c1e21; 
     text-decoration: none; 
@@ -39,46 +40,42 @@ h2 small { font-weight: normal; color: #65676b; }
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
     border: 1px solid #ddd;
     
-    /* Сетка внутри кнопки */
-    display: grid;
-    grid-template-columns: 32px 1fr 32px; /* Иконка (32) | Текст (авто) | Пусто (32) */
-    align-items: center;
-    gap: 4px;
-}
-
-.btn span {
-    grid-column: 2;
+    display: flex;             
+    align-items: center;       
+    justify-content: center;   
     text-align: center;
-    white-space: normal;
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Максимум 2 строки */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    position: relative;
 }
 
-/* Общий контейнер для иконок (картинка или эмодзи) */
 .btn img, .btn .emoji {
-    width: 28px;
-    height: 20px;
-    object-fit: contain;
-    justify-self: center; /* Центрируем внутри первой колонки 32px */
-    display: block;
-    margin: 0;
-}
-
-..btn-folder {
-    flex-shrink: 0; /* Папка не сжимается */
-    width: 48px;
-    height: 48px;
+    position: absolute;
+    left: 12px;
+    width: 28px;       /* Жёстко задаем ширину */
+    height: 20px;      /* Жёстко задаем высоту */
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain; /* Чтобы флаги не растягивались, а вписывались */
+    margin-right: 0;
+}
+
+.btn .emoji {
+    font-size: 20px;   /* Размер эмодзи, чтобы не раздувал кнопку */
+    line-height: 1;
+}
+
+.btn-folder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-decoration: none;
     font-size: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .btn:active, .btn-folder:active { background-color: #e4e6eb; }
