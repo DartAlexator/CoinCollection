@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>    
+<body>
     <div class="sticky-header">
-        <h1>Альбом<br><small>A001-06-GD-BK</small></h1>
-        <h2><span class="emoji">🇪🇺</span> Юбилейные 2 евро<br><small>(часть 6)</small></h2>
+        <!-- Сюда скрипт сам впишет ID из названия файла -->
+        <h1>Альбом<br><small id="albumId">Загрузка...</small></h1>
+        <h2><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;"> Юбилейные 2 евро<br><small>(часть 6)</small></h2>
     </div>
-    
-    <h2>На текущий момент данный альбом пуст</h2>
 
-    <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
+    <div id="buttonsContainer"></div>
 
     <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
         <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
-
+    
     <div class="footer">Dart_Alexator Coin Collection Library ©</div>
+
+    <script src="album_logic.js"></script>
 </body>
 </html>

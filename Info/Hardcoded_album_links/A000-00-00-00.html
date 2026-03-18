@@ -4,33 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <div class="sticky-header">
-        <h1>Виртуальный альбом<br><small>A000-00-00-00</small></h1>
+        <!-- Сюда скрипт сам впишет ID из названия файла -->
+        <h1>Альбом<br><small id="albumId">Загрузка...</small></h1>
         <h2>Включает в себя<br>полноценные коллекции без<br>физических альбомов</h2>
     </div>
 
-    <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <div class="btn-row">
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Monaco/%23EURO%23Monaco%23Commemorative%23%5B2007-present%5D%23UNC.xlsx" class="btn">
-            <span class="emoji">🇪🇺</span>  <span class="emoji"> 🇲🇨</span> <span> Юбилейные 2 ЕВРО<br>Монако / Monaco</span>
-        </a>
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Monaco/" class="btn-folder" title="Открыть папку">📂</a>
-    </div>
-    
-    <div class="btn-row">
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Foreign_various/Foreighn_duplicates.xlsx" class="btn">
-            <span class="emoji">🌍</span> <span> Дубли монет мира<br>(вне конкретной коллеции)</span>
-        </a>
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Foreign_various/" class="btn-folder" title="Открыть папку">📂</a>
-    </div>
-    
+    <div id="buttonsContainer"></div>
+
     <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
         <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
     
-    <div class="footer">Все права защищены ©</div>
+    <div class="footer">Dart_Alexator Coin Collection Library ©</div>
+
+    <script src="album_logic.js"></script>
 </body>
 </html>

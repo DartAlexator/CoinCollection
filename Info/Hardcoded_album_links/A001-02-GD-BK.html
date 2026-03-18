@@ -4,41 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>    
+<body>
     <div class="sticky-header">
-        <h1>Альбом<br><small>A001-02-GD-BK</small></h1>
-        <h2><span class="emoji">🇪🇺</span> Юбилейные 2 евро<br><small>(часть 2)</small></h2>
+        <!-- Сюда скрипт сам впишет ID из названия файла -->
+        <h1>Альбом<br><small id="albumId">Загрузка...</small></h1>
+        <h2><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;"> Юбилейные 2 евро<br><small>(часть 2)</small></h2>
     </div>
-    
 
-     <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <div class="btn-row">
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Germany/%23EURO%23Germany%23Commemorative%23%5B2006-present%5D%23UNC.xlsx" class="btn">
-            <span class="emoji">🇩🇪</span> <span>Германия / Germany</span>
-        </a>
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Germany/" class="btn-folder" title="Открыть папку">📂</a>
-    </div>
-    
-    <div class="btn-row">
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Luxembourg/%23EURO%23Luxembourg%23Commemorative%23%5B2004-present%5D%23UNC.xlsx" class="btn">
-            <span class="emoji">🇱🇺</span> <span>Люксембург / Luxembourg</span>
-        </a>
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Luxembourg/" class="btn-folder" title="Открыть папку">📂</a>
-    </div>
-   
-    <div class="btn-row">
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Malta/%23EURO%23Malta%23Commemorative%23%5B2009-present%5D%23UNC.xlsx" class="btn">
-            <span class="emoji">🇲🇹</span> <span>Мальта / Malta</span></a>
-        </a>
-        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/EURO/Malta/" class="btn-folder" title="Открыть папку">📂</a>
-    </div>
-    
+    <div id="buttonsContainer"></div>
+
     <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
         <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
-
+    
     <div class="footer">Dart_Alexator Coin Collection Library ©</div>
+
+    <script src="album_logic.js"></script>
 </body>
 </html>
