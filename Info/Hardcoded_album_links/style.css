@@ -27,22 +27,32 @@ h2 small { font-weight: normal; color: #65676b; }
 
 .btn { 
     flex-grow: 1; 
-    padding: 14px 10px; 
+    padding: 14px 40px; /* Увеличили боковой отступ, чтобы текст не наезжал на иконку */
     background-color: #ffffff; 
     color: #1c1e21; 
-    text-align: left; 
     text-decoration: none; 
     border-radius: 10px; 
     font-weight: 600;
     font-size: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
     border: 1px solid #ddd;
+    
     display: flex;             
     align-items: center;       
-    justify-content: flex-start; 
+    justify-content: center;   /* ТЕКСТ ТЕПЕРЬ ПО ЦЕНТРУ */
+    text-align: center;
+    position: relative;        /* База для позиционирования иконки */
+    
     white-space: normal;       
     overflow: visible;         
     text-overflow: clip;       
+}
+
+/* Фиксируем иконку (эмодзи или флаг) строго слева */
+.btn img, .btn .emoji, .btn .icon-placeholder {
+    position: absolute;
+    left: 12px;
+    margin-right: 0;
 }
 
 .btn-folder {
@@ -91,7 +101,7 @@ h2 small { font-weight: normal; color: #65676b; }
     color: #8a8d91; 
     text-align: center;
 }
-.emoji { margin-right: 5px; }
+.emoji { margin-right: 0; }
 
 .sticky-header {
     position: sticky;
