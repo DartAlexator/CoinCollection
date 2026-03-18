@@ -4,44 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <style>
-        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 25px; margin: 0; }
-        h2 { color: #1c1e21; margin-bottom: 10px; font-size: 22px; text-align: center; width: 100%;}
-        .btn { 
-            display: block; width: 100%; max-width: 280px; padding: 16px; margin: 8px 0;
-            background-color: #ffffff; color: #1c1e21; text-align: center; 
-            text-decoration: none; border-radius: 12px; font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #ddd;
-        }
-        .btn:active { background-color: #e4e6eb; }
-        .footer { margin-top: auto; padding-top: 40px; font-size: 11px; color: #8a8d91; }
-        h1 {
-            text-align: center; /* Центрирует текст */
-            width: 100%;        /* Растягивает заголовок на всю ширину */
-            color: #1c1e21;       /* Тот же стильный темный цвет */
-            font-size: 26px;      /* Чуть крупнее, чем h2 */
-            margin-bottom: 5px;  /* Отступ до следующего элемента */
-            line-height: 1.2;     /* Расстояние между строками после <br> */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Альбом<br><small>A009-01-FB-LN</small></h1>
     
     <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/%23Kazakhstan%23Regular%23%5B1995-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇰🇿</span> <span> Регулярные монеты Казахстана</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/%23Kazakhstan%23Commercial%23%5B2004-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇰🇿️</span> <span> Юбилейные монеты Казахстана</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/United_Kingdom/%23British_India%23Regular%23%5B1834-1947%5D%23circulation_quality.xlsx" class="btn"> 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/British_Raj_Red_Ensign.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">
-        <span> Регулярные монеты<br>Британской Индии</span>
-    </a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/%23Republic_of_India%23Regular%23%5B1950-1956%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇮🇳</span> <span> Регулярные монеты Индии<br>[1950-1956]</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/%23Republic_of_India%23Regular%23%5B1957-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇮🇳</span> <span> Регулярные монеты Индии<br>[1957-present]</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Russia/%23Russia%23Russian_Empire%23Regular%23%5B1867-1917%5D%23circulation_quality.xlsx" class="btn"> 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Russia_%281858%E2%80%931896%29.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">
-        <span> Регулярные монеты<br>Российской империи</span>
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/%23Kazakhstan%23Regular%23%5B1995-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇰🇿</span> <span> Регулярные монеты Казахстана</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/%23Kazakhstan%23Commercial%23%5B2004-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇰🇿️</span> <span> Юбилейные монеты Казахстана</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Kazakhstan/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/United_Kingdom/%23British_India%23Regular%23%5B1834-1947%5D%23circulation_quality.xlsx" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/British_Raj_Red_Ensign.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">
+            <span> Регулярные монеты<br>Британской Индии</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/United_Kingdom/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/%23Republic_of_India%23Regular%23%5B1950-1956%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇮🇳</span> <span> Регулярные монеты Индии<br>[1950-1956]</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/%23Republic_of_India%23Regular%23%5B1957-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇮🇳</span> <span> Регулярные монеты Индии<br>[1957-present]</span></a>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/India/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Russia/%23Russia%23Russian_Empire%23Regular%23%5B1867-1917%5D%23circulation_quality.xlsx" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Russia_%281858%E2%80%931896%29.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">
+            <span> Регулярные монеты<br>Российской империи</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Russia/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+
+    <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
+        <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
 
-    <div class="footer">Все права защищены ©</div>
+    <div class="footer">Dart_Alexator Coin Collection Library ©</div>
 </body>
 </html>

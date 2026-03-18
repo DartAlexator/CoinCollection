@@ -1,0 +1,94 @@
+body { 
+    font-family: -apple-system, sans-serif; 
+    background: #f0f2f5; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 25px 25px 0 25px;
+    margin: 0; 
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+h1 { text-align: center; width: 100%; color: #1c1e21; font-size: 24px; margin-bottom: 5px; line-height: 1.2; }
+h1 small { font-size: 18px; color: #007bff; font-family: monospace; }
+
+h2 { color: #1c1e21; margin-bottom: 20px; font-size: 20px; text-align: center; width: 100%; line-height: 1.2; }
+h2 small { font-weight: normal; color: #65676b; }
+
+.btn-row { 
+    display: flex; 
+    width: 100%; 
+    max-width: 280px; 
+    gap: 8px; 
+    margin: 4px 0; 
+    align-items: center;
+}
+
+.btn { 
+    flex-grow: 1; 
+    padding: 14px 10px; 
+    background-color: #ffffff; 
+    color: #1c1e21; 
+    text-align: center; 
+    text-decoration: none; 
+    border-radius: 10px; 
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    border: 1px solid #ddd;
+    display: flex;             
+    align-items: center;       
+    justify-content: flex-start; 
+    white-space: normal;       
+    overflow: visible;         
+    text-overflow: clip;       
+}
+
+.btn-folder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn:active, .btn-folder:active { background-color: #e4e6eb; }
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 252px;
+    padding: 14px;
+    margin-top: 35px;
+    background-color: #24292e; 
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.btn-back:active {
+    background-color: #000000;
+    transform: translateY(2px);
+}
+
+.footer { 
+    margin-top: 20px; 
+    padding-bottom: 30px; 
+    font-size: 11px; 
+    color: #8a8d91; 
+    text-align: center;
+}
+.emoji { margin-right: 5px; }

@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <style>
-        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 25px; margin: 0; }
-        h2 { color: #1c1e21; margin-bottom: 10px; font-size: 22px; text-align: center; width: 100%;}
-        .btn { 
-            display: block; width: 100%; max-width: 280px; padding: 16px; margin: 8px 0;
-            background-color: #ffffff; color: #1c1e21; text-align: center; 
-            text-decoration: none; border-radius: 12px; font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #ddd;
-        }
-        .btn:active { background-color: #e4e6eb; }
-        .footer { margin-top: auto; padding-top: 40px; font-size: 11px; color: #8a8d91; }
-        h1 {
-            text-align: center; /* Центрирует текст */
-            width: 100%;        /* Растягивает заголовок на всю ширину */
-            color: #1c1e21;       /* Тот же стильный темный цвет */
-            font-size: 26px;      /* Чуть крупнее, чем h2 */
-            margin-bottom: 5px;  /* Отступ до следующего элемента */
-            line-height: 1.2;     /* Расстояние между строками после <br> */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Альбом<br><small>A008-01-OA-BK</small></h1>
     
     <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Spain/%23Spain%23Regular%23%5B1934-2001%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇪🇸</span> <span> Регулярные монеты Испании</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/%23Canada%23Regular%23%5B1953-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇨🇦️</span> <span> Регулярные монеты Канады</span></a>
-    <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/%23Canada%23Commemorative%23%5B1953-present%5D%23circulation_quality.xlsx" class="btn"> <span class="emoji">🇨🇦</span> <span> Юбилейные монеты Канады</span></a>
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Spain/%23Spain%23Regular%23%5B1934-2001%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇪🇸</span> <span> Регулярные монеты Испании</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Spain/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/%23Canada%23Regular%23%5B1953-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇨🇦️</span> <span> Регулярные монеты Канады</span>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
+    
+    <div class="btn-row">
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/%23Canada%23Commemorative%23%5B1953-present%5D%23circulation_quality.xlsx" class="btn">
+            <span class="emoji">🇨🇦</span> <span> Юбилейные монеты Канады</span></a>
+        </a>
+        <a href="https://github.com/DartAlexator/CoinCollection/raw/master/Collections/Canada/" class="btn-folder" title="Открыть папку">📂</a>
+    </div>
 
-    <div class="footer">Все права защищены ©</div>
+    <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
+        <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
+    </a>
+
+    <div class="footer">Dart_Alexator Coin Collection Library ©</div>
 </body>
 </html>
