@@ -34,7 +34,7 @@ const csvUrl = 'album_buttons.csv';
                     let iconHtml = '';
                     if (iconData && iconData !== "") {
                         if (iconData.startsWith('http')) {
-                            iconHtml = `<img src="${iconData}" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">`;
+                            iconHtml = `<img src="${iconData}" width="24" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;">`;
                         } else {
                             iconHtml = `<span class="emoji">${iconData}</span>`;
                         }
