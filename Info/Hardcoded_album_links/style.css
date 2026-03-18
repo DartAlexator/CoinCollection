@@ -27,10 +27,7 @@ h2 small { font-weight: normal; color: #65676b; }
 
 .btn { 
     flex-grow: 1; 
-    min-width: 0;      /* Важно: не дает кнопке раздуваться от длинного текста */
-    height: 46px;      /* Делаем высоту кнопок такой же, как у btn-folder (46px) */
-    padding: 0 45px;   /* Отступы по бокам, чтобы текст не наезжал на иконку */
-    
+    padding: 14px 40px; /* Увеличили боковой отступ, чтобы текст не наезжал на иконку */
     background-color: #ffffff; 
     color: #1c1e21; 
     text-decoration: none; 
@@ -42,26 +39,20 @@ h2 small { font-weight: normal; color: #65676b; }
     
     display: flex;             
     align-items: center;       
-    justify-content: center;   
+    justify-content: center;   /* ТЕКСТ ТЕПЕРЬ ПО ЦЕНТРУ */
     text-align: center;
-    position: relative;
+    position: relative;        /* База для позиционирования иконки */
+    
+    white-space: normal;       
+    overflow: visible;         
+    text-overflow: clip;       
 }
 
-.btn img, .btn .emoji {
+/* Фиксируем иконку (эмодзи или флаг) строго слева */
+.btn img, .btn .emoji, .btn .icon-placeholder {
     position: absolute;
     left: 12px;
-    width: 28px;       /* Жёстко задаем ширину */
-    height: 20px;      /* Жёстко задаем высоту */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: contain; /* Чтобы флаги не растягивались, а вписывались */
     margin-right: 0;
-}
-
-.btn .emoji {
-    font-size: 20px;   /* Размер эмодзи, чтобы не раздувал кнопку */
-    line-height: 1;
 }
 
 .btn-folder {
