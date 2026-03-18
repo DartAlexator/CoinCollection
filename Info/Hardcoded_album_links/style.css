@@ -13,7 +13,20 @@ body {
 h1 { text-align: center; width: 100%; color: #1c1e21; font-size: 24px ; margin-bottom: 0px; line-height: 1.2; }
 h1 small { font-size: 18px; color: #007bff; font-family: monospace; }
 
-h2 { color: #1c1e21; margin-bottom: 5px; font-size: 20px; text-align: center; width: 100%; line-height: 1.2; }
+h2 {  
+    color: #1c1e21; 
+    margin-bottom: 5px; 
+    font-size: 20px; 
+    text-align: center; 
+    width: 100%; 
+    max-width: 280px;  /* Ограничиваем, чтобы было вровень с кнопками */
+    margin-left: auto; /* Центрируем блок по горизонтали */
+    margin-right: auto;/* Центрируем блок по горизонтали */
+    line-height: 1.2; 
+    box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+    padding: 0 10px;   /* Чтобы текст не касался краев на очень узких экранах */
+}
+
 h2 small { font-weight: normal; color: #65676b; }
 
 .btn-row { 
