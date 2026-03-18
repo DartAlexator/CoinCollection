@@ -70,13 +70,10 @@
         async function init() {
             try {
                 const resp = await fetch(csvUrl + '?t=' + Date.now());                
-                const buffer = await resp.arrayBuffer();
-
-                // Декодируем из DOS-кодировки (ibm866)
-                const decoder = new TextDecoder('ibm866'); 
-                const text = decoder.decode(buffer);
+                const text = await resp.text();
                 
-                const rows = text.split('\n').filter(row => row.trim() !== '');
+                // Очистка от \r и разбивка на строки
+                const rows = text.replace(/\r/g, "").split('\n').filter(row => row.trim() !== '');
                 
                 const grid = document.getElementById('albumGrid');
                 const loader = document.getElementById('loader');
