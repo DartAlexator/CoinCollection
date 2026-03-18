@@ -31,19 +31,32 @@
         
         .hidden { display: none; }
         #loader { color: #888; font-size: 14px; margin-top: 50px; }
+        
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: #f0f2f5; /* Должен совпадать с фоном body */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000; /* Чтобы быть выше карточек */
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
+    <div class="sticky-header">
+        <h1>Dart_Alexator</h1>
+        <div class="subtitle">Coin Collection Library</div>
 
-    <h1>Dart_Alexator</h1>
-    <div class="subtitle">Coin Collection Library</div>
-
-    <input type="text" id="searchBar" placeholder="Поиск..." onkeyup="filterAlbums()">
-    <div style="margin-bottom: 20px; font-size: 14px; color: #1c1e21; display: flex; align-items: center; gap: 8px;">
-        <input type="checkbox" id="deepSearch" style="width: 18px; height: 18px; cursor: pointer;">
-        <label for="deepSearch" style="cursor: pointer; user-select: none;">Включить поиск по ключевым словам</label>
+        <input type="text" id="searchBar" placeholder="Поиск..." onkeyup="filterAlbums()">
+        <div style="margin-bottom: 20px; font-size: 14px; color: #1c1e21; display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="deepSearch" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="deepSearch" style="cursor: pointer; user-select: none;">Включить поиск по ключевым словам</label>
+        </div>
     </div>
-
 
     <div id="loader">Загрузка данных из CSV...</div>
     <div class="grid" id="albumGrid"></div>
