@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
      <style>
-        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 25px; margin: 0; min-height: 100vh; }
+        body { 
+            font-family: -apple-system, sans-serif; 
+            background: #f0f2f5; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 25px 25px 0 25px; /* Убираем нижний отступ, чтобы не создавал лишнюю высоту */
+            margin: 0; 
+            overflow-x: hidden; /* Защита от горизонтального сдвига */
+            min-height: 100%;   /* Не даем растягиваться больше чем нужно */
+        }
         
         h1 { text-align: center; width: 100%; color: #1c1e21; font-size: 24px; margin-bottom: 5px; line-height: 1.2; }
         h1 small { font-size: 18px; color: #007bff; font-family: monospace; }
@@ -87,8 +97,8 @@
         }
 
         .footer { 
-            margin-top: 30px; /* Фиксированный отступ сверху */
-            padding-bottom: 20px; /* Отступ от самого края экрана */
+            margin-top: 20px; 
+            padding-bottom: 30px; 
             font-size: 11px; 
             color: #8a8d91; 
             text-align: center;
@@ -126,6 +136,6 @@
         <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
 
-    <div class="footer">Dart_Alexator Collector System ©</div>
+    <div class="footer">Dart_Alexator Coin Collection Library ©</div>
 </body>
 </html>
