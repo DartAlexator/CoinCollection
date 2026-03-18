@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dart_Alexator Coin Collection</title>
     <style>
-        body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
+        body { 
+            font-family: -apple-system, sans-serif; 
+            background: #f0f2f5; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 20px 20px 0 20px;
+            margin: 0; 
+        }
         h1 { text-align: center; color: #1c1e21; font-size: 20px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
         .subtitle { color: #65676b; font-size: 12px; margin-bottom: 20px; text-transform: uppercase; }
         
         #searchBar {
-            width: 100%; max-width: 360px; padding: 12px 15px; margin-bottom: 20px;
-            border: 2px solid #ddd; border-radius: 12px; font-size: 16px; outline: none; box-sizing: border-box;
+            width: 100%; 
+            max-width: 360px; 
+            padding: 12px 15px; 
+            margin-bottom: 10px; /* Уменьшили отступ снизу */
+            border: 2px solid #ddd; 
+            border-radius: 12px; 
+            font-size: 16px; 
+            outline: none; 
+            box-sizing: border-box;
         }
         #searchBar:focus { border-color: #007bff; }
 
@@ -41,16 +56,16 @@
             flex-direction: column;
             align-items: center;
             z-index: 1000; /* Чтобы быть выше карточек */
-            padding-top: 10px;
-            padding-bottom: 5px;
+            padding-top: 5px; 
+            box-shadow: 0 10px 10px -10px rgba(0,0,0,0.1); 
         }
     </style>
 </head>
 <body>
-    <div class="sticky-header">
-        <h1>Dart_Alexator</h1>
-        <div class="subtitle">Coin Collection Library</div>
+    <h1>Dart_Alexator</h1>
+    <div class="subtitle">Coin Collection Library</div>
 
+    <div class="sticky-header">
         <input type="text" id="searchBar" placeholder="Поиск..." onkeyup="filterAlbums()">
         <div style="margin-bottom: 20px; font-size: 14px; color: #1c1e21; display: flex; align-items: center; gap: 8px;">
             <input type="checkbox" id="deepSearch" style="width: 18px; height: 18px; cursor: pointer;">
