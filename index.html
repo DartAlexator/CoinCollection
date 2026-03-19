@@ -69,7 +69,7 @@
     <div class="sticky-header">
         <input type="text" id="searchBar" placeholder="Поиск..." onkeyup="filterAlbums()">
         <div style="margin-bottom: 20px; font-size: 14px; color: #1c1e21; display: flex; align-items: center; gap: 8px;">
-            <input type="checkbox" id="deepSearch" style="width: 18px; height: 18px; cursor: pointer;">
+            <input type="checkbox" id="deepSearch" style="width: 18px; height: 18px; cursor: pointer;" checked>
             <label for="deepSearch" style="cursor: pointer; user-select: none;">Включить поиск по ключевым словам</label>
         </div>
     </div>
@@ -84,7 +84,7 @@
         // Если пришли НЕ из альбома — сбрасываем старый поиск
         if (!document.referrer.includes('Hardcoded_album_links')) {
             sessionStorage.removeItem('lastSearchText');
-            sessionStorage.removeItem('lastSearchDeep');
+            sessionStorage.setItem('lastSearchDeep', 'true'); 
         }
         
         const iconMap = {
@@ -145,9 +145,11 @@
                     grid.appendChild(card);
                 }
                 
-                // Восстанавливаем состояние, если вернулись
+                // ВОССТАНОВЛЕНИЕ
                 const savedText = sessionStorage.getItem('lastSearchText');
-                const savedDeep = sessionStorage.getItem('lastSearchDeep') === 'true';
+                onst savedDeep = (sessionStorage.getItem('lastSearchDeep') !== null) 
+                                 ? sessionStorage.getItem('lastSearchDeep') === 'true' 
+                                 : true;
 
                 if (savedText || savedDeep) {
                     document.getElementById('searchBar').value = savedText || "";
