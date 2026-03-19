@@ -21,7 +21,7 @@
             width: 100%; 
             max-width: 360px; 
             padding: 12px 15px; 
-            margin-bottom: 10px; /* Уменьшили отступ снизу */
+            margin-bottom: 10px;
             border: 2px solid #ddd; 
             border-radius: 12px; 
             font-size: 16px; 
@@ -39,7 +39,23 @@
             border: 1px solid #e0e0e0; transition: 0.1s;
         }
         .card:active { transform: scale(0.98); background: #fafafa; }
-        .icon { font-size: 24px; margin-right: 15px; }
+        
+        /* Стили для нашей новой векторной книги */
+        .book-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .book-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+        }
+
         .info { display: flex; flex-direction: column; }
         .title { font-weight: bold; font-size: 15px; line-height: 1.2; }
         .code { font-size: 13px; color: #007bff; margin-top: 4px; font-family: monospace; }
@@ -50,12 +66,12 @@
         .sticky-header {
             position: sticky;
             top: 0;
-            background: #f0f2f5; /* Должен совпадать с фоном body */
+            background: #f0f2f5; 
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            z-index: 1000; /* Чтобы быть выше карточек */
+            z-index: 1000; 
             padding-top: 15px; 
             box-shadow: 0 10px 10px -10px rgba(0,0,0,0.1); 
             margin-bottom: 5px;
@@ -81,54 +97,63 @@
         const csvUrl = 'Info/Hardcoded_album_links/albums_ID.csv';
         const fldUrl = 'Info/Hardcoded_album_links/';
         
-        // Если пришли НЕ из альбома — сбрасываем старый поиск
         if (!document.referrer.includes('Hardcoded_album_links')) {
             sessionStorage.removeItem('lastSearchText');
             sessionStorage.setItem('lastSearchDeep', 'true'); 
         }
         
-        const iconMap = {
-            '00': '📔',	//Virtual
-            'BK': '📓',	//Black
-            'WH': '📔',	//White
-            'RD': '📕', 	//Red
-            'GR': '📗', 	//Green
-            'GY': '📓',	//Grey
-            'BL': '📘', 	//Blue
-            'LB': '📘', 	//Light Blue
-            'DB': '📘', 	//Dark Blue
-            'BU': '📕', 	//Burgundy
-            'BN': '📙', 	//Brown
-            'DN': '📙', 	//Dark Brown
-            'LN': '📒' 	//Light Brown
+        // Карта цветов на основе твоих кодов
+        const colorMap = {
+            '00': '#f8f9fa', // Virtual (почти белый)
+            'BK': '#212529', // Black
+            'WH': '#ffffff', // White
+            'RD': '#b22222', // Red (Firebrick)
+            'GR': '#228b22', // Green (ForestGreen)
+            'GY': '#808080', // Grey
+            'BL': '#007bff', // Blue
+            'LB': '#87ceeb', // Light Blue
+            'DB': '#000080', // Dark Blue (Navy)
+            'BU': '#800000', // Burgundy (Maroon)
+            'BN': '#8b4513', // Brown (SaddleBrown)
+            'DN': '#5d2906', // Dark Brown
+            'LN': '#deb887'  // Light Brown (BurlyWood)
         };
+
+        // Функция генерации SVG иконки
+        function getBookSVG(hexColor) {
+            const strokeColor = hexColor.toLowerCase() === '#ffffff' ? '#ccc' : '#333';
+            return `
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Обложка -->
+                    <path d="M4 4H18C19.1 4 20 4.9 20 6V20C20 21.1 19.1 22 18 22H4V4Z" fill="${hexColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+                    <!-- Корешок (затенение) -->
+                    <path d="M4 4H7V22H4V4Z" fill="rgba(0,0,0,0.15)"/>
+                    <!-- Декор (полоски на обложке) -->
+                    <line x1="9" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.6"/>
+                    <line x1="9" y1="11" x2="14" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.6"/>
+                </svg>`;
+        }
 
         async function init() {
             try {
                 const resp = await fetch(csvUrl + '?t=' + Date.now());                
                 const text = await resp.text();
-                
-                // Очистка от \r и разбивка на строки
                 const rows = text.replace(/\r/g, "").split('\n').filter(row => row.trim() !== '');
-                
                 const grid = document.getElementById('albumGrid');
                 const loader = document.getElementById('loader');
                 if(loader) loader.remove();
 
-                // Начинаем с i=1, чтобы пропустить заголовок таблицы
                 for (let i = 1; i < rows.length; i++) {
                     const cols = rows[i].split(';');
                     if (cols.length < 4) continue;
 
-                    const idCode = cols[1].trim().replace(/\r/g, "");   // Album ID
-                    const titleRu = cols[3].trim().replace(/\r/g, "");  // Album Content (ru)
-                    const autoLink =  fldUrl + idCode + '.html';
-                    
+                    const idCode = cols[1].trim().replace(/\r/g, "");   
+                    const titleRu = cols[3].trim().replace(/\r/g, "");  
+                    const autoLink = fldUrl + idCode + '.html';
                     const keywords = cols[4] ? cols[4].trim().replace(/\r/g, "") : "";
                     
-                    // Берем последние 2 буквы ID для определения цвета
                     const colorSuffix = idCode.split('-').pop();
-                    const icon = iconMap[colorSuffix] || '📘';
+                    const albumHex = colorMap[colorSuffix] || '#007bff';
 
                     const card = document.createElement('a');
                     card.className = 'card';
@@ -136,7 +161,7 @@
                     card.setAttribute('data-keywords', keywords); 
 
                     card.innerHTML = `
-                        <div class="icon">${icon}</div>
+                        <div class="book-icon">${getBookSVG(albumHex)}</div>
                         <div class="info">
                             <span class="title">${titleRu}</span>
                             <span class="code">${idCode}</span>
@@ -145,7 +170,6 @@
                     grid.appendChild(card);
                 }
                 
-                // ВОССТАНОВЛЕНИЕ
                 const savedText = sessionStorage.getItem('lastSearchText');
                 const savedDeep = (sessionStorage.getItem('lastSearchDeep') !== null) 
                                   ? sessionStorage.getItem('lastSearchDeep') === 'true' 
@@ -158,37 +182,36 @@
                 }
             } catch (err) {
                 document.getElementById('loader').innerText = "Ошибка доступа к CSV файлу.";
-                console.error(err);
             }
         }
 
         function filterAlbums() {
             let input = document.getElementById('searchBar').value.toLowerCase();
-            let isDeep = document.getElementById('deepSearch').checked; // Проверяем галочку
+            let isDeep = document.getElementById('deepSearch').checked;
+            let cards = document.querySelectorAll('.card');
 
+            // Сохраняем состояние поиска
             sessionStorage.setItem('lastSearchText', input);
             sessionStorage.setItem('lastSearchDeep', isDeep);
-            
-            let cards = document.getElementsByClassName('card');
 
-            for (let card of cards) {
-                let mainText = card.querySelector('.info').textContent.toLowerCase();
-                let keywords = card.getAttribute('data-keywords') || "";
-                
-                let found = mainText.includes(input);
-                
-                // Если включен "глубокий поиск", проверяем и ключевые слова
-                if (isDeep && keywords.toLowerCase().includes(input)) {
-                    found = true;
+            cards.forEach(card => {
+                let title = card.querySelector('.title').innerText.toLowerCase();
+                let code = card.querySelector('.code').innerText.toLowerCase();
+                let keywords = card.getAttribute('data-keywords').toLowerCase();
+
+                // Проверяем: совпадает ли название/код ИЛИ (если включен deepSearch) ключевые слова
+                let matchNormal = title.includes(input) || code.includes(input);
+                let matchDeep = isDeep && keywords.includes(input);
+
+                if (matchNormal || matchDeep) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
                 }
-
-                card.classList.toggle('hidden', !found);
-            }
+            });
         }
         
-        document.getElementById('deepSearch').addEventListener('change', filterAlbums);
-
-        init();
+        window.onload = init;
     </script>
 </body>
 </html>
