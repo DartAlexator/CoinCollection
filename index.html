@@ -80,7 +80,13 @@
     <script>
         const csvUrl = 'Info/Hardcoded_album_links/albums_ID.csv';
         const fldUrl = 'Info/Hardcoded_album_links/';
-
+        
+        // Если пришли НЕ из альбома — сбрасываем старый поиск
+        if (!document.referrer.includes('Hardcoded_album_links')) {
+            sessionStorage.removeItem('lastSearchText');
+            sessionStorage.removeItem('lastSearchDeep');
+        }
+        
         const iconMap = {
             '00': '📔',	//Virtual
             'BK': '📓',	//Black
@@ -138,6 +144,16 @@
                     `;
                     grid.appendChild(card);
                 }
+                
+                // Восстанавливаем состояние, если вернулись
+                const savedText = sessionStorage.getItem('lastSearchText');
+                const savedDeep = sessionStorage.getItem('lastSearchDeep') === 'true';
+
+                if (savedText || savedDeep) {
+                    document.getElementById('searchBar').value = savedText || "";
+                    document.getElementById('deepSearch').checked = savedDeep;
+                    filterAlbums(); 
+                }
             } catch (err) {
                 document.getElementById('loader').innerText = "Ошибка доступа к CSV файлу.";
                 console.error(err);
@@ -147,12 +163,14 @@
         function filterAlbums() {
             let input = document.getElementById('searchBar').value.toLowerCase();
             let isDeep = document.getElementById('deepSearch').checked; // Проверяем галочку
+
+            sessionStorage.setItem('lastSearchText', input);
+            sessionStorage.setItem('lastSearchDeep', isDeep);
+            
             let cards = document.getElementsByClassName('card');
 
             for (let card of cards) {
-                // Текст названия и ID (всегда виден)
                 let mainText = card.querySelector('.info').textContent.toLowerCase();
-                // Ключевые слова (скрыты в атрибуте, который мы добавим при загрузке)
                 let keywords = card.getAttribute('data-keywords') || "";
                 
                 let found = mainText.includes(input);
