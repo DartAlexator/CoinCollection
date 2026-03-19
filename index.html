@@ -147,9 +147,9 @@
                 
                 // ВОССТАНОВЛЕНИЕ
                 const savedText = sessionStorage.getItem('lastSearchText');
-                onst savedDeep = (sessionStorage.getItem('lastSearchDeep') !== null) 
-                                 ? sessionStorage.getItem('lastSearchDeep') === 'true' 
-                                 : true;
+                const savedDeep = (sessionStorage.getItem('lastSearchDeep') !== null) 
+                                  ? sessionStorage.getItem('lastSearchDeep') === 'true' 
+                                  : true;
 
                 if (savedText || savedDeep) {
                     document.getElementById('searchBar').value = savedText || "";
