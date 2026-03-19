@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin collection</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>    
+<body>
     <div class="sticky-header">
-        <h1>Альбом<br><small>A012-01-OA-BU</small></h1>
-        <h2>Содержит коллекции:<br><span class="emoji">🚇</span> Билеты на метро,<br><span class="emoji">🚋</span> проездные трамвайные билеты;<br><span class="emoji">Ⓜ️</span> Жетоны метро</h2>
+        <!-- Сюда скрипт сам впишет ID из названия файла -->
+        <h1>Альбом<br><small id="albumId">Загрузка...</small></h1>        
     </div>
-    
-    <!-- !!!!!!!!!!!!! Менять в ссылке blob на raw -->
+
+    <div id="buttonsContainer"></div>
+
     <a href="https://dartalexator.github.io/CoinCollection/index.html" class="btn-back">
         <span>ВЕРНУТЬСЯ К СПИСКУ АЛЬБОМОВ</span>
     </a>
-
+    
     <div class="footer">Dart_Alexator Coin Collection Library ©</div>
+
+    <script src="album_logic.js"></script>
 </body>
 </html>
