@@ -79,6 +79,7 @@
 
     <script>
         const csvUrl = 'Info/Hardcoded_album_links/albums_ID.csv';
+        const fldUrl = 'Info/Hardcoded_album_links/';
 
         const iconMap = {
             '00': '📔',	//Virtual
@@ -115,7 +116,7 @@
 
                     const idCode = cols[1].trim().replace(/\r/g, "");   // Album ID
                     const titleRu = cols[3].trim().replace(/\r/g, "");  // Album Content (ru)
-                    const autoLink = `https://dartalexator.github.io{idCode}.html`;
+                    const autoLink =  fldUrl + idCode + '.html';
                     
                     const keywords = cols[4] ? cols[4].trim().replace(/\r/g, "") : "";
                     
