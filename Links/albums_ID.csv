@@ -1,0 +1,29 @@
+﻿#;Album ID;Album Content;Album Content (ru);Keywords
+#000;A000-00-00-00;Virtual album;Виртуальный альбом;Юбилейные,2 евро,Монако,Monaco,дубли,монеты мира,еврозона
+#001;A001-01-GD-BK;2 Euro (part 1);Юбилейные 2 евро (часть 1);Юбилейные,2 евро,Австрия,Austria,Бельгия,Belgium,Кипр,Cyprus,Эстония,Estonia,Франция,France,Италия,Italy,Латвия,Latvia,Ирландия,Ireland,Литва,Lithuania,Нидерланды,Netherlands,Португалия,Portugal,еврозона
+#002;A001-02-GD-BK;2 Euro (part 2);Юбилейные 2 евро (часть 2);Юбилейные,2 евро,Германия,Germany,Люксембург,Luxembourg,Мальта,Malta,еврозона
+#003;A001-03-GD-BK;2 Euro (part 3);Юбилейные 2 евро (часть 3);Юбилейные,2 евро,Андорра,Andorra,Сан-Марино,San Marino,San-Marino,Ватикан,Vatican City,еврозона
+#004;A001-04-GD-BK;2 Euro (part 4);Юбилейные 2 евро (часть 4);Юбилейные,2 евро,Финляндия,Finland,Испания,Spain,Словения,Slovenia,Словакия,Slovakia,Хорватия,Croatia,Греция,Greece,еврозона
+#005;A001-05-GD-BK;2 Euro (part 5);Юбилейные 2 евро (часть 5);Null,Пусто,пустой
+#006;A001-06-GD-BK;2 Euro (part 6);Юбилейные 2 евро (часть 6);Null,Пусто,пустой
+#007;A002-01-OA-BK;Commemorative USA coins (Mints P and S);Юбилейные монеты США (Дворы P и S);Юбилейные,США,$,двор P,двор S,Дворы P и S,доллар,USA
+#008;A002-02-OA-BK;Commemorative USA coins (Mint D);Юбилейные монеты США (Двор D);Юбилейные,США,$,двор D,доллар,USA
+#009;A003-01-OA-DB;Commemorative Russian Federasion coins (part 1);Юбилейные монеты РФ (часть 1);Юбилейные,Россия,РФ,Рубль,рубли,Russian Federation
+#010;A003-02-OA-DB;Commemorative Russian Federasion coins (part 2);Юбилейные монеты РФ (часть 2);Юбилейные,Россия,РФ,Рубль,рубли,Russian Federation
+#011;A004-01-OA-BK;Regular euro coins (part 1);Регулярные монеты евро (часть 1);Регулярка,Регулярные,евро,евроцент,Австрия,Austria,Бельгия,Belgium,Болгария,Bulgaria,Хорватия,Croatia,Кипр,Cyprus,Эстония,Estonia,Финляндия,Finland,Франция,France,Германия,GermanyГреция,Greece,Ирландия,Ireland,Италия,Italy,Латвия,Latvia,Люксембург,Luxembourg,Мальта,Malta,еврозона
+#012;A004-02-OA-BK;Regular euro coins (part 2);Регулярные монеты евро (часть 2);Регулярка,Регулярные,евро,евроцент,еврозона,Монако,Monaco,Нидерланды,Netherlands,Португалия,Portugal,Сан-Марино,San Marino,San-Marino,Словакия,Slovakia,Испания,Spain
+#013;A005-01-OA-BK;Regular USA coins (Mints P and S);Регулярные монеты США (Дворы P и S);Регулярка,Регулярные,США,$,двор P,двор S,Дворы P и S,доллар,USA
+#014;A005-02-OA-BK;Regular USA coins (Mint D);Регулярные монеты США (Двор D);Регулярка,Регулярные,США,$,двор D,доллар,USA
+#015;A006-01-OA-BU;Regular Russian Federasion coins;Регулярные монеты РФ ;Регулярка,Регулярные,Россия,РФ,Рубль,рубли,Russian Federation
+#016;A007-01-OA-BK;USSR commemorative and regular coins;Советские юбилейные и регулярные монеты;Регулярка,Регулярные,Юбилейные,СССР,Россия,Рубль,рубли,USSR,Советский союз, Soviet Union
+#017;A008-01-OA-BK;Spain and Canada regular and commemorative coins;Регулярные и юбилейны монеты Испании и Канады;Регулярка,Регулярные,Юбилейные,Канада,Испания,Canada,Spain
+#018;A009-01-FB-BN;World coins (part 1) Europe, America, Africa, Australia and Oceania;Монеты мира (часть 1) Европа, Америка, Африка, Австралия и Океания;монеты мира,Регулярка,Регулярные
+#019;A009-02-FB-DN;World coins (part 2) Asia;Монеты мира (часть 2) Азия;монеты мира,Регулярка,Регулярные
+#020;A010-01-OA-DB;World banknotes;Банкноты мира;Банкноты мира,Боны
+#021;A011-01-OA-GR;Tickets (part 1) to the theater, museums, concerts and performances;Билеты (часть 1) в театры, музеи, на концерты и спектакли;Билеты,театры, музей,музеи,концерты,спектакли
+#022;A011-02-OA-GR;Tickets (part 2) for parks, cinemas, special events, trains, and planes. Various tokens;Билеты (часть 2) в парки, кино, на особые события, на поезда, на самолёты. Различные жетоны;Билеты,аквапарки,парки,кино,поезда,самолёты,жетоны
+#023;A012-01-OA-BU;Metro tickets, tram passes. Metro tokens;Билеты метро, проездные трамвайные билеты. Жетоны метро;Билеты метро, проездные трамвайные билеты,жетоны метро
+#024;A013-01-OA-LN;Plastic cards;Пластиковые карты;Пластиковые карты,Plastic cards
+#025;A014-01-OA-DN;Kazachstan regular and commemorative coins;Регулярные и юбилейны монеты Казахстана;Регулярка,Регулярные,Юбилейные,Казахстан,Kazakhstan
+#026;A015-01-OA-BK;Great Britain, Ukrainian, Indian coins;Монеты Украины, Индии, Великобритании;Регулярка,Регулярные,Юбилейные,Украина,Ukraine,Британская Индия,Великобритания,Great Britain,British India,Индия,India,United Kingdom,Соединённое королевство
+#027;A016-01-OA-BK;Russian Empire and German coins;Монеты Российской империи и Германии;Российская Империя,Россия,Russian Empire,Германия,Germany,Германская империя,German Empire,Веймарская республика,Weimar Republic,Третий Рейх,Third Reich,Nazi Germany,ГДР,GDR,ФРГ,BRD
