@@ -1,5 +1,5 @@
 Как добавить новый альбом (Для примера с именем A001-01-GD-BK):
-1) Создать файл CoinCollection\Links\#001.html (взяв за основу существующий)
+1) Создать файл CoinCollection\Links\n001.html (взяв за основу существующий)
    Заменить в нём строку <h2> на новые (если нужно)       
         <h2><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" width="28" style="margin-right:12px; border: 1px solid #eee; vertical-align: middle;"> Юбилейные 2 евро<br><small>(часть 1)</small></h2>
         

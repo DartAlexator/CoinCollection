@@ -146,9 +146,11 @@
                     const cols = rows[i].split(';');
                     if (cols.length < 4) continue;
 
-                    const idCode = cols[1].trim().replace(/\r/g, "");   
+                    const shortID = cols[0].trim().replace(/\r/g, ""); // Берем n018 из первого столбца
+                    const idCode  = cols[1].trim().replace(/\r/g, ""); // Полный ID для отображения
                     const titleRu = cols[3].trim().replace(/\r/g, "");  
-                    const autoLink = fldUrl + idCode + '.html';
+
+                    const autoLink = fldUrl + shortID + '.html';
                     const keywords = cols[4] ? cols[4].trim().replace(/\r/g, "") : "";
                     
                     const colorSuffix = idCode.split('-').pop();
